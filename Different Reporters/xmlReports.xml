@@ -1,0 +1,59 @@
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="16.905949999999997">
+<testsuite name="test.spec.js" timestamp="2024-04-15T09:05:58.002Z" hostname="chromium" tests="2" failures="1" skipped="0" time="27.012" errors="0">
+<testcase name="TC_001, TC_002 - Verify Forgot your password interface" classname="test.spec.js" time="11.723">
+</testcase>
+<testcase name="TC_003 - Login the Application with valid credentials" classname="test.spec.js" time="15.289">
+<failure message="test.spec.js:27:1 TC_003 - Login the Application with valid credentials" type="FAILURE">
+<![CDATA[  [chromium] › test.spec.js:27:1 › TC_003 - Login the Application with valid credentials ───────────
+
+    Error: Navigated to Home Page
+
+    Timed out 5000ms waiting for expect(locator).not.toHaveURL(expected)
+
+    Locator: locator(':root')
+    Expected string: not "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+    Received string: "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+    Call log:
+      - Navigated to Home Page with timeout 5000ms
+      - waiting for locator(':root')
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+      -   locator resolved to <html>…</html>
+      -   unexpected value "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+
+
+      35 |   );
+      36 |   const homePage = new sections.HomePage(page, test);
+    > 37 |   await expect(page, "Navigated to Home Page").not.toHaveURL(
+         |                                                    ^
+      38 |     process.env.DASHBOARD_URL
+      39 |   );
+      40 |   await homePage.logOut();
+
+        at C:\Playwright\Different Reporters\tests\test.spec.js:37:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\test-TC-003---Login-the-Application-with-valid-credentials-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\test-TC-003---Login-the-Application-with-valid-credentials-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

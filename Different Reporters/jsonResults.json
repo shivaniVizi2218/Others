@@ -1,0 +1,229 @@
+{
+  "config": {
+    "configFile": "C:\\Playwright\\Different Reporters\\playwright.config.js",
+    "rootDir": "C:/Playwright/Different Reporters/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputDir": "reports",
+          "outputFile": "htmlResults.html"
+        }
+      ],
+      [
+        "list",
+        {
+          "printSteps": true
+        }
+      ],
+      [
+        "line",
+        null
+      ],
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputDir": "reports",
+          "outputFile": "jsonResults.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputDir": "reports",
+          "outputFile": "xmlReports.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Playwright/Different Reporters/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Playwright/Different Reporters/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.43.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "test.spec.js",
+      "file": "test.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC_001, TC_002 - Verify Forgot your password interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 11723,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Navigating to OrangeHRM main page",
+                      "duration": 7430
+                    },
+                    {
+                      "title": "Clicking Forgot Your Password",
+                      "duration": 385
+                    },
+                    {
+                      "title": "Entering username in Reset password portal",
+                      "duration": 327
+                    },
+                    {
+                      "title": "Submitted username to reset password",
+                      "duration": 1111
+                    }
+                  ],
+                  "startTime": "2024-04-15T09:05:58.680Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31be70adcd52654ff551-8bbe8f803e5166d62063",
+          "file": "test.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "TC_003 - Login the Application with valid credentials",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 15289,
+                  "error": {
+                    "message": "Error: Navigated to Home Page\n\n\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: not \u001b[32m\"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[39m\nReceived string: \u001b[31m\"\u001b[7mhttps://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- Navigated to Home Page with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n",
+                    "stack": "Error: Navigated to Home Page\n\n\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: not \u001b[32m\"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[39m\nReceived string: \u001b[31m\"\u001b[7mhttps://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- Navigated to Home Page with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\n    at C:\\Playwright\\Different Reporters\\tests\\test.spec.js:37:52",
+                    "location": {
+                      "file": "C:\\Playwright\\Different Reporters\\tests\\test.spec.js",
+                      "column": 52,
+                      "line": 37
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 35 |\u001b[39m   )\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mconst\u001b[39m homePage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m sections\u001b[33m.\u001b[39m\u001b[33mHomePage\u001b[39m(page\u001b[33m,\u001b[39m test)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m\"Navigated to Home Page\"\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveURL(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 |\u001b[39m     process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mDASHBOARD_URL\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 39 |\u001b[39m   )\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 40 |\u001b[39m   \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39mlogOut()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playwright\\Different Reporters\\tests\\test.spec.js",
+                        "column": 52,
+                        "line": 37
+                      },
+                      "message": "Error: Navigated to Home Page\n\n\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: not \u001b[32m\"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[39m\nReceived string: \u001b[31m\"\u001b[7mhttps://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- Navigated to Home Page with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\u001b[2m  -   locator resolved to <html>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 35 |\u001b[39m   )\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mconst\u001b[39m homePage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m sections\u001b[33m.\u001b[39m\u001b[33mHomePage\u001b[39m(page\u001b[33m,\u001b[39m test)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m,\u001b[39m \u001b[32m\"Navigated to Home Page\"\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveURL(\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 |\u001b[39m     process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mDASHBOARD_URL\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 39 |\u001b[39m   )\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 40 |\u001b[39m   \u001b[36mawait\u001b[39m homePage\u001b[33m.\u001b[39mlogOut()\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Playwright\\Different Reporters\\tests\\test.spec.js:37:52\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Navigating to OrangeHRM main page",
+                      "duration": 7218
+                    },
+                    {
+                      "title": "Entered valid username",
+                      "duration": 893
+                    },
+                    {
+                      "title": "Entered correct password",
+                      "duration": 27
+                    },
+                    {
+                      "title": "Clicking login button",
+                      "duration": 1185
+                    }
+                  ],
+                  "startTime": "2024-04-15T09:05:58.696Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playwright\\Different Reporters\\test-results\\test-TC-003---Login-the-Application-with-valid-credentials-chromium\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Playwright\\Different Reporters\\tests\\test.spec.js",
+                    "column": 52,
+                    "line": 37
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "31be70adcd52654ff551-87ed95a4bfd69e77605d",
+          "file": "test.spec.js",
+          "line": 27,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-04-15T09:05:57.769Z",
+    "duration": 17078.964,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

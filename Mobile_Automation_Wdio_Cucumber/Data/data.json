@@ -1,0 +1,24 @@
+{
+  "userCredentials": {
+    "sidechef_username": "lav@gmail.com",
+    "sidechef_password": "Lavsc123"
+  },
+
+  "sideChefData_homePage": {
+    "cartText": "ADD YOUR OWN ITEMS",
+    "popUp_Text": "Fresh New Layout!",
+    "moreOptions_text": "More Options",
+    "sure_text": "Are You Sure?",
+    "inspiration_text": "Daily Inspiration",
+    "savedRecipe_text": "My Saved Recipes"
+  },
+  "sideChefData_SearchPage": {
+    "searchPage_text": "Search by Ingredients"
+  },
+  "recipe":{
+   "new_recipe":"Create Recipe",
+   "recipe_name":"My_OwnRecipe",
+   "ingredient_1":"Butter",
+   "ingredient_2":"cheese"
+  }
+}

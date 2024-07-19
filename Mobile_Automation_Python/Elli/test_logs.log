@@ -1,0 +1,15 @@
+06/24/2024 11:59:33 AM - WARNING - root : Before each test
+06/24/2024 12:00:07 PM - INFO - root : Before yield
+06/24/2024 12:00:07 PM - INFO - root : Starting test_valid_sign_in
+06/24/2024 12:00:07 PM - INFO - root : After yield
+06/24/2024 12:00:09 PM - WARNING - root : After each test
+06/24/2024 12:00:09 PM - WARNING - root : Before each test
+06/24/2024 12:00:48 PM - INFO - root : Before yield
+06/24/2024 12:00:48 PM - INFO - root : Starting test_valid_sign_in1
+06/24/2024 12:00:48 PM - INFO - root : After yield
+06/24/2024 12:00:50 PM - WARNING - root : After each test
+06/24/2024 12:00:50 PM - WARNING - root : Before each test
+06/24/2024 12:01:32 PM - INFO - root : Before yield
+06/24/2024 12:01:32 PM - INFO - root : Starting test_valid_sign_in2
+06/24/2024 12:01:32 PM - INFO - root : After yield
+06/24/2024 12:01:34 PM - WARNING - root : After each test

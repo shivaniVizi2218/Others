@@ -1,0 +1,6 @@
+{
+  "default": {
+    "paths": ["Features/*.feature"],
+    "require": ["steps/*.js", "utils/*.js", "pages/*.js"]
+  }
+}

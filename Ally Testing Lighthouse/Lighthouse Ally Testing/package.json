@@ -1,0 +1,19 @@
+{
+  "name": "lighthouse-ally-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.30"
+  },
+  "dependencies": {
+    "lighthouse": "^9.6.8",
+    "playwright-lighthouse": "^3.0.0"
+  }
+}

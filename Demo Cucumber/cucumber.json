@@ -1,0 +1,11 @@
+{
+  "default": {
+    "paths": ["tests/features/parabank.feature"],
+    "require": ["tests/steps/*.step.js", "utilities/*.js", "pages/*.js"],
+    "cucumber": "cucumber-js -f json:reports/json/cucumber_report.json",
+    "format": [
+      "html:./playwright_reports/report.html",
+      "json:./playwright_reports/cucumber_report.json"
+    ]
+  }
+}

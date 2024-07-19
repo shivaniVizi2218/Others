@@ -1,0 +1,72 @@
+[
+  {
+    "description": "    Validating different operations in the website",
+    "elements": [
+      {
+        "description": "",
+        "id": "the-para-bank-website;register-user",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Register User",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "user navigate to the website",
+            "match": {
+              "location": "tests\\steps\\loginPage.step.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3971132899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "user navigate to register portal",
+            "match": {
+              "location": "tests\\steps\\loginPage.step.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 454694099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "user enters the credentials",
+            "match": {
+              "location": "tests\\steps\\loginPage.step.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 257777600,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'fill')\n    at LoginPage.enterCredentials (C:\\Playwright\\Demo Cucumber\\pages\\loginPage.js:67:34)\n    at async World.<anonymous> (C:\\Playwright\\Demo Cucumber\\tests\\steps\\loginPage.step.js:14:3)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 173360600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "the-para-bank-website",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "The Para Bank Website",
+    "tags": [],
+    "uri": "tests\\features\\parabank.feature"
+  }
+]

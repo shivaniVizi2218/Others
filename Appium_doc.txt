@@ -1,0 +1,23 @@
+GUI version
+https://github.com/appium/appium-desktop/releases
+
+appium-driver
+appium driver install uiautomator2
+
+listing drivers
+appium driver list --installed
+
+appium inspector
+https://github.com/appium/appium-inspector/releases
+
+const path = require('path');
+"appium:app":path.join(process.cwd(), "app\\android\\com.flipkart.android-01.apk")
+ 
+
+com.flipkart.android.SplashActivity - Flipkart
+"C:\Users\shivani.vizinigiri\Downloads\com.flipkart.android-01.apk"
+
+com.fsn.nykaa.SplashScreenActivity - Nykaa
+
+com.letyshops.presentation.view.activity.SplashActivity
+com.letyshops.presentation.view.activity.MainActivity - LetyShops

@@ -1,0 +1,10 @@
+allure-pytest
+allure-python-commons
+Appium-Python-Client
+pip
+PyAutoGUI
+pytest
+pytest-metadata
+pytest-ordering
+selenium
+

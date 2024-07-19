@@ -1,0 +1,20 @@
+{
+  "name": "orangehrm-accessibility",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.30"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.8.5",
+    "axe-core": "^4.9.0",
+    "axe-html-reporter": "^2.2.3",
+    "dotenv": "^16.4.5"
+  }
+}

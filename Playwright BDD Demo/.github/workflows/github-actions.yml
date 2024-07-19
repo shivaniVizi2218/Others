@@ -1,0 +1,192 @@
+name: Playwright Tests
+ 
+on:
+  push:
+    branches:
+      - main  
+  pull_request:
+    branches:
+      - main  
+  workflow_dispatch:
+jobs:
+  UI_Test:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.4.0
+ 
+      - name: Install dependencies
+        run: npm install
+       
+      - name: Install playwright
+        run: npx playwright install
+       
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
+ 
+      - name: Run Playwright tests with xvfb
+        run: |
+          xvfb-run npm run ui_test
+         
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: json
+          path: reports/json
+  A11y_Test:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.4.0
+ 
+      - name: Install dependencies
+        run: npm install
+       
+      - name: Install playwright
+        run: npx playwright install
+       
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
+ 
+      - name: Run Playwright tests with xvfb
+        run: |
+          xvfb-run npm run a11y_test
+         
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Accesbility_Report
+          path: reports/a11y
+      - name: Upload Assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Assets
+          path: assets        
+  k6_Test:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.4.0
+ 
+      - name: Install dependencies
+        run: npm install
+ 
+      - name: Run k6 local test
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: utility/performance_test.mjs
+         
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: |
+            reports/index
+  generate_ui_report:
+    needs: [UI_Test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: git chechout
+        uses: actions/checkout@v4
+      - name: SetUp NodeJs -21
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.4.0
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: json
+          path: ./report
+      - run: ls -lrt
+      - name: Install
+        run: npm install
+      - run: |
+          mkdir reports/json
+          mv -v report/*.json ./reports/json/cucumber_report.json
+          npm run genarate_report
+      - name: Ui Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: reports/ui
+  upload_index_page:
+    needs: [k6_Test,generate_ui_report,A11y_Test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: git chechout
+        uses: actions/checkout@v4
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: performance-report
+          path: ./reporter
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: cucumber-report
+          path: ./reporter
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Accesbility_Report
+          path: ./reporter
+      - name: download aasets
+        uses: actions/download-artifact@v4
+        with:
+          name: Assets
+          path: ./reporter
+      
+      - name: Final Report
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+            name: github-pages
+            path: reporter
+
+  deploy_report:
+    if: always()
+    # Add a dependency to the build job
+    needs: [upload_index_page]
+ 
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+ 
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+ 
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+ 
